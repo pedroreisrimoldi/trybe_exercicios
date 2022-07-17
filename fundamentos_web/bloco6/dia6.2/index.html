@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <title>bootstrap</title>
+</head>
+
+<body>
+    <main id="form" class=" form-control container border-top bg-success p-2 text-dark bg-opacity-25  ">
+    <head >
+        <h1 class="text-center">Formulário</h1>
+    </head>
+  
+        <form action="scripts.js" method="get">
+            <div class="form-control">
+                <div class="form-control">
+                    <label for="input-name mb-3 ">Digite seu nome</label>
+                    <input class="form-floating mb-3" type="text" name="input-name" id="input-name">
+                    <br>
+                    <label for="input-email">Digite seu email</label>
+                    <input class="form-floating mb-3" type="email" name="input-email" id="input-email">
+                </div>
+                <div class="form-control">
+                    <p>Destino preferido</p> 
+                    <input class="mr-3" type="radio" name="destino" id="mg">MG
+                    <input class="mr-3" type="radio" name="destino" id="to">TO
+                    <input class="mr-3" type="radio" name="destino" id="pe">PE
+                    <input class="mr-3" type="radio" name="destino" id="al">AL
+                </div>
+                <div class="form-control">
+                    <p>Porque Você deveria ser a pessoa desenvolvedora a ganhar o concurso pela TrybeTrip?</p>
+                    <textarea class="form-control" name="txt-pessoal-forms" id="txt-pessoal-forms" maxlength="500" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-control">
+                    <input type="date" name="input-date-form-viagem" id="input-date-form-viagem"> <br>
+                    <label for="confirmacao-notificacao">Gostaria de receber noficicações pela Trybe?</label>
+                    <input type="checkbox" name="confirmacao-notificacao"> <br>
+                    <label for="confimacao-uso-imagem">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+                    <input type="checkbox" name="confimacao-uso-imagem" id="confimacao-uso-imagem">          
+                </div>
+                <div class="form-control">
+                    <button class="btn btn-success m-3 p-2" type="submit" id="enviar-forms">Enviar</button>
+                    <button class="btn btn-danger m-3 p-2" type="reset" id="reset-forms">Resetar Form</button> 
+                </div> 
+            </div>
+        </form>
+    </main>
+    <p id="escreverEnvioForms"></p>
+    
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
