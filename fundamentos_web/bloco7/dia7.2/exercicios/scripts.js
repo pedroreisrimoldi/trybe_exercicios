@@ -1,13 +1,26 @@
-const value1 = document.getElementById('value1').value;
-const value2 = document.getElementById('value2').value;
+const value1 = document.getElementById('value1').innerText;
+const value2 = document.getElementById('value2').innerText;
 const paragrafo = document.getElementById('result');
-    const verify = (value1, value2) => {
-        if (typeof value1 !== 'number' || typeof value2 !== 'number') {
-        throw new Error ('Só aceita entrada de valores numéricos.');
-     }
-    }       
-    const sum = (value1, value2) => {
+   
+const valoresVazios = (value1,value2) => {
+  if (value1 === '' || value2 === '') {
+    throw new Error ('Não pode haver campos vazios.')
+  }
+}
+
+const verify = (value1, value2) => {
     try {
+       valoresVazios(value1,value2);
+      if (typeof value1 !== 'number' || typeof value2 !== 'number') {
+        throw new Error ('Só aceita entrada de valores numéricos.');
+       }
+     } catch (error) {
+      return error.message;
+     }
+    }   
+
+    const sum = (value1, value2) => {
+      try {
         verify(value1,value2);
         let resultado = value1 + value2;
         paragrafo.innerText = `Resultado: ${resultado}`;
