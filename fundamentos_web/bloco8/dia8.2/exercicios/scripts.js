@@ -62,7 +62,6 @@ const books = [
   ];
  /* 🚀 1 - Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947.
 Dica: use a função find.*/
-
   function authorBornIn1947(books, anoNascimento) {
     const livro = books.find((elemento) => elemento.author.birthYear === anoNascimento) 
     return livro.author.name
@@ -85,12 +84,10 @@ Dica: use a função find.*/
 console.log(smallerName(books));
 
 //3 - Encontre o primeiro livro cujo nome possui 26 caracteres.
-
 function getNamedBook(books, tamanho) {
   const maiorTitulo = books.find((elemento) => elemento.name.length === tamanho)
   console.log(maiorTitulo);
 }
-
 getNamedBook(books, 26);
 
 //4 - Ordene os livros por data de lançamento em ordem decrescente.
@@ -101,18 +98,23 @@ function booksOrderedByReleaseYearDesc(parametro) {
 booksOrderedByReleaseYearDesc(books)
 
 //🚀 5 - Faça uma função que retorne true, se todas as pessoas autoras nasceram no século XX, ou false, caso contrário.
-
 function everyoneWasBornOnSecXX(parametro) {
  const verificacao = Object.values(parametro).every((nascimento) => nascimento.author.birthYear >= 1900 && nascimento.author.birthYear < 2000)
  console.log(verificacao);
 }
-
 everyoneWasBornOnSecXX(books)
 
 //🚀 6 - Faça uma função que retorne true, se algum livro foi lançado na década de 80, e false, caso contrário.
-
 function someBookWasReleaseOnThe80s(parametro) {
  const verificacao = Object.values(parametro).some((elemento) => elemento.releaseYear > 1979 && elemento.releaseYear <=1989)
  console.log(verificacao);
 }
 someBookWasReleaseOnThe80s(books)
+
+
+//7 - Faça uma função que retorne true, caso nenhum author tenha nascido no mesmo ano, e false, caso contrário.
+function authorUnique(parametro, ano) {
+  const verificacao = Object.values(parametro).some((nascimento) => nascimento.author.birthYear === ano)
+  console.log(verificacao);
+}
+authorUnique(books, 1947)
